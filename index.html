@@ -2,11 +2,732 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/public.css">
     <title>顶脉</title>
 </head>
+<style>
+    .lunbo{
+        width: 100%;
+        height: 400px;
+        position: relative;
+    }
+    .lunboBox{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .lunboBox>li{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left:0;
+        top:0;
+        display: none;
+    }
+    .lunboBox>li>a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-color:#54657E
+    }
+    .lunboBox>li:first-child>a{
+        width: 100%;
+        height: 100%;
+        background-image:url("images/index/banner.png");
+    }
+    .lunbolist{
+        width: 116px;
+        height: 8px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        position: absolute;
+        bottom:12px;
+        left:50%;
+        margin-left:-58px;
+        z-index: 9;
+    }
+    .lunbolist>li{
+        width: 8px;
+        height:8px;
+        border-radius: 5px;
+        background: rgba(255,255,255,0.4);
+        cursor: pointer;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+    }
+    .lunbolist .active{
+        width: 30px;
+        background: #fff;
+        height: 6px;
+        position: relative;
+        top:1px;
+    }
+    .show{
+        display: block !important;
+    }
+    .part1{
+        height: 610px;
+        background:#F8F8F8;
+        overflow: hidden;
+    }
+    .starsBox{
+        width: 1200px;
+        margin: 0 auto;
+        height: 345px;
+        position: relative;
+    }
+    .stars{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .stars>li{
+        width:225px;
+        height: 100%;
+        cursor: pointer;
+    }
+    .stars>li>a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        background:#54657E;
+    }
+    .stars>li img{
+        display: block;
+        width:100%;
+        height: 280px;
+        border-radius: 8px;
+    }
+    .starsX{
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+    .stars .content{
+        position: relative;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+        height: 66px;
+        overflow: hidden;
+        background: #F8F8F8;
+    }
+    .stars .content p{
+        padding-top: 10px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .stars .content span{
+        display: block;
+        font-size: 13px;
+        line-height: 30px;
+        color:#666;
+        padding: 0 15px;
+    }
+    .stars>li:hover .content{
+        background: #fff;
+        height: 150px;
+        top:-84px;
+        -webkit-box-shadow: 5px 5px 10px  #bdbdbd;
+        box-shadow: 5px 5px 10px  #bdbdbd;
+    }
+    .stars>li:hover .content p{
+        font-weight: bolder;
+    }
+    .starslist{
+        width: 120px;
+        height: 6px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background: #E4ECF7;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        position: absolute;
+        bottom:-50px;
+        left:50%;
+        margin-left:-58px;
+        z-index: 9;
+        border-radius: 3px;
+    }
+    .starslist>li{
+        width: 30px;
+        height: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .starsActive{
+        background: #3391F3;
+    }
+    .part2{
+        height: 700px;
+        background: #fff;
+        overflow: hidden;
+    }
+    .news{
+        width: 1200px;
+        height: 484px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .newsBigbox{
+        width: 1200px;
+        overflow: hidden;
+    }
+    .newsBox{
+        white-space: nowrap;
+        width: 200000px;
+        overflow: hidden;
+    }
+    .newsBox>li{
+        width: 370px;
+        height: 100%;
+        float: left;
+        margin-right:42px;
+    }
+    .newsBox>li img{
+        display: block;
+        width: 100%;
+        height: 220px;
+    }
+    .newsBox>li>a{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .newsBottom{
+        height: 260px;
+        background: #fff;
+        padding: 10px 20px ;
+        white-space: normal;
+    }
+    .newsBottom .p1{
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    .newsBottom span{
+        font-size: 12px;
+        color:#979797;
+    }
+    .newsBottom .p2{
+        padding: 10px 0;
+        width: 100%;
+        font-size: 12px;
+        color:#555;
+        line-height: 30px;
+    }
+    .icon_left{
+        position: absolute;
+        top:50%;
+        margin-top: -26px;
+        left:-120px;
+        cursor: pointer;
+    }
+    .icon_right{
+        position: absolute;
+        top:50%;
+        margin-top: -26px;
+        right:-120px;
+        cursor: pointer;
+    }
+    .part3{
+        height: 500px;
+        background: #F8F8F8;
+        overflow: hidden;
+    }
+    .xinmeiti,.xinmeiti2{
+        width:1200px;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    .xinmeiti img,.xinmeiti2 img{
+        cursor: pointer;
+        position: relative;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+        top:0;
+    }
+    .xinmeiti img:hover{
+        top:-18px;
+    }
+    .part4{
+        height:360px;
+        background:#fff;
+        overflow: hidden;
+    }
+</style>
 <body>
 <div class="head"></div>
+<div class="lunbo">
+    <ul class="lunboBox">
+        <li>
+            <a href="company.html"></a>
+        </li>
+        <li >
+            <a href="#"></a>
+        </li>
+        <li >
+            <a href="#"></a>
+        </li>
+        <li >
+            <a href="#"></a>
+        </li>
+        <li >
+            <a href="#"></a>
+        </li>
+    </ul>
+    <ul class="lunbolist">
+        <li>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="part1">
+    <img src="images/index/icon_01.png" alt="" class="partimage">
+    <div class="starsBox">
+        <div class="starsX">
+            <ul class="stars">
+                <li>
+                    <a href="#">
+                        <img src="images/index/j1.png" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="starsX">
+            <ul class="stars">
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="starsX">
+            <ul class="stars">
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="starsX">
+            <ul class="stars">
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="" alt="">
+                        <div class="content">
+                            <p></p>
+                            <span>
+                             </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <ul class="starslist">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<div class="part2">
+    <img src="images/index/icon_02.png" alt="" class="partimage">
+    <div class="news">
+        <div class="newsBigbox">
+            <ul class="newsBox">
+            </ul>
+        </div>
+        <img src="images/index/icon_left.png" alt="" class="icon_left">
+        <img src="images/index/icon_right.png"  alt="" class="icon_right">
+    </div>
+</div>
+<div class="part3">
+    <img src="images/index/icon_03.png" alt="" class="partimage">
+    <ul class="xinmeiti">
+        <img src="images/index/icon_dingmaidouyin.png" alt="">
+        <img src="images/index/icon_dingmaiweibo.png" alt="">
+        <img src="images/index/icon_dingmaigongzhonghao.png" alt="">
+        <img src="images/index/icon_dingmaitengxunketang.png" alt="">
+    </ul>
+</div>
+<div class="part4">
+    <img src="images/index/icon_04.png" alt="" class="partimage">
+    <ul class="xinmeiti2" style="margin-top: 60px">
+         <a href="https://mkt.51job.com/tg/sem/pz_v2.html" target="_blank">
+            <img src="images/index/icon_qianchengwuyou.png" alt="">
+        </a>
+        <a  href="https://landing.zhaopin.com/register" target="_blank">
+            <img src="images/index/icon_zhilianzhaopin.png" alt="">
+        </a>
+        <a  href="https://www.lagou.com/landing-page/pc/search.html" target="_blank">
+            <img src="images/index/icon_lagou.png" alt="">
+        </a>
+        <a  href="https://maimai.cn" target="_blank">
+            <img src="images/index/icon_momo.png" alt="">
+        </a>
+        <a href="https://www.zhipin.com" target="_blank">
+            <img src="images/index/icon_boss.png" alt="" style="position: relative;top:20px">
+        </a>
+        <a href="https://ke.qq.com" target="_blank">
+            <img src="images/index/icon_tengxunketang.png" alt="">
+        </a>
+    </ul>
+</div>
+<div class="foot"></div>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/public.js"></script>
+<script>
+    $(function () {
+        // 轮播图
+        var index = 1
+        $('.lunboBox>li').eq(0).addClass('show')
+        $('.lunbolist>li').eq(0).addClass('active')
+        function lunbo() {
+            $('.lunboBox>li').hide().eq(index).show();
+            $('.lunbolist>li').removeClass('active').eq(index).addClass('active')
+            index++;
+            if(index>4){
+                index=0;
+            }
+        }
+        var t = setInterval(lunbo,3000)
+        $('.lunbolist>li').on('mouseover',function () {
+            index=$(this).index();
+            lunbo()
+            clearInterval(t)
+        }).on('mouseout',function () {
+            t = setInterval(lunbo,5000)
+        })
+        $('.lunbo').on('mouseover',function () {
+            clearInterval(t)
+        }).on('mouseout',function () {
+            t = setInterval(lunbo,5000)
+        })
+        //轮播图数据请求
+        $.ajax({
+            type: "post",
+            dataType: 'json',
+            url: port+"/api.php?act=carousel_list",
+            success: function(res) {
+                if (res.error == 1) {
+                    if (res.data.length > 0) {
+                        var data = res.data;
+                        data.forEach((item, index) => {
+                            $('.lunboBox>li').eq(index+1).find('a').attr('href',item.link).css('backgroundImage','url('+item.img_url+')')
+                        })
+                    }
+                }
+            }
+        });
+        //就业明星轮播图
+        var starsIndex = 1
+        $('.starsX').eq(0).addClass('show')
+        $('.starslist>li').eq(0).addClass('starsActive')
+        function starslunbo() {
+            $('.starsX').hide().eq(starsIndex).show();
+            $('.starslist>li').removeClass('starsActive').eq(starsIndex).addClass('starsActive')
+            starsIndex++;
+            if(starsIndex>3){
+                starsIndex=0;
+            }
+        }
+        var starsT = setInterval(starslunbo,5000)
+        $('.starslist>li').on('mouseover',function () {
+            starsIndex=$(this).index();
+            starslunbo()
+            clearInterval(starsT)
+        }).on('mouseout',function () {
+            starsT= setInterval(starslunbo,5000)
+        })
+        $('.starsBox').on('mouseover',function () {
+            clearInterval(starsT)
+        }).on('mouseout',function () {
+            starsT = setInterval(starslunbo,5000)
+        })
+        //就业明星数据请求
+        $.ajax({
+            type: "post",
+            dataType: 'json',
+            url: port+"/api.php?act=article_list&cate_id=2",
+            success: function(res) {
+                if (res.error == 1) {
+                    if (res.data.list.length > 0) {
+                        var data=res.data.list;
+                        data.forEach((item,index)=>{
+                           var $a=$('.stars>li').eq(index).find('a')
+                               $a.attr('href','detail.html?id='+item.id)
+                               $a.find('img').attr('src',item.pic)
+                               $a.find('p').html(item.title)
+                               $a.find('span').html(item.keyword+'<br>'+item.description)
+                        })
+                    }
+                }
+            }
+        });
+        // 热点新闻
+        //数据请求
+        $.ajax({
+            type: "post",
+            dataType: 'json',
+            url: port+"/api.php?act=article_list&cate_id=4",
+            data:{
+                page_size:10000
+            },
+            success: function(res) {
+                if (res.error == 1) {
+                    if (res.data.list.length > 0) {
+                        var data=res.data.list,
+                            length=res.data.list.length;
+                        data.forEach((item,index)=>{
+                            var $li=$('<li></li>'),
+                                $a=$('<a></a>').attr('href','detail.html?id='+item.id),
+                                $img=$('<img/>').attr('src',item.pic),
+                                $div=$('<div></div>').addClass('newsBottom'),
+                                $p1=$('<p></p>').addClass('p1').html(item.title),
+                                $span1=$('<span></span>').html(item.date),
+                                $p2=$('<p></p>').addClass('p2').html(item.description),
+                                $span2=$('<span></span>').html('点击数 '+item.click_num);
+                                $div.append([$p1,$span1,$p2,$span2])
+                                $a.append([$img,$div])
+                                $li.append($a)
+                                 $('.newsBox').append($li)
+                        })
+                        $('.icon_left').on('click',function (){
+                            tab(1,length-3)
+                        })
+                        $('.icon_right').on('click',function (){
+                            tab(0,length-3)
+                        })
+                    }
+                }
+            }
+        });
+        var newsIndex = 0;
+        function tab(number,max) {
+            if(max<=0){
+                return
+            }
+            if(number==0){
+                newsIndex++
+                if(newsIndex>max){
+                    newsIndex=max
+                }
+            }
+            if(number==1){
+                newsIndex--
+                if(newsIndex<0){
+                    newsIndex=0
+                }
+            }
+            $('.newsBox').animate({marginLeft:-newsIndex*412+'px'})
+        }
+
+    })
+</script>
 </html>

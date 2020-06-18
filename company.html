@@ -2,10 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/public.css">
     <title>顶脉</title>
 </head>
+<style>
+    .part1{
+        height: 400px;
+        width: 100%;
+    }
+    .part1>img{
+        width: 100%;
+        height: 100%;
+    }
+    .part2{
+        height:360px;
+        background:#F8F8F8;
+        position: relative;
+    }
+    .part2Box{
+        position: absolute;
+        width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        border-radius: 5px;
+        background: #fff;
+        left: 50%;
+        margin-left: -600px;
+        top:-56px;
+        z-index:2;
+    }
+    .part2Box p{
+        font-size: 16px;
+        line-height: 36px;
+        color:#666666;
+        padding: 0 120px
+    }
+    .part3{
+        background: #fff;
+    }
+</style>
 <body>
 <div class="head"></div>
+<div class="part1">
+    <img src="images/index/banner.png" alt="">
+</div>
+<div class="part2">
+    <div class="part2Box">
+        <img src="images/company/icon_gongsijianjie.png" alt="" class="partimage" style="margin-top:50px;margin-bottom: 20px">
+        <p>
+            湖南顶脉网络科技有限公司（前身长沙顶脉）成立于2015年4月，是一家专门为IT类培训机构、在线教育机构和高职高专、
+            本科院校提供实习实训和就业外包服务的公司，经过五年的发展，顶脉就业外包业务已经覆盖IT互联网、电商、游戏动漫、物联网、人工智能大数据、通讯技术等六大专业类，共计278个技术类岗位，累计给全国数千家企业输送了37000多名优秀的IT技术人才。 公司精耕技术类人才就业外包细分市场，细心打磨，厚积薄发，现在已经发展成为集就业流程外包(EPO)、大学生职前教育、企业RPO和猎聘为一体的创新型互联网公司，立志成为全国领先的技术类人才求职招聘的综合服务型平台。
+        </p>
+    </div>
+</div>
+<div class="part3">
+    <img src="images/company/icon_fazhanlicheng.png" alt="" class="partimage" style="margin-top:50px;margin-bottom: 20px">
+    <img src="images/company/bg_fazhanlicheng.png" alt="" class="partimage">
+</div>
+<div class="foot"></div>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/public.js"></script>
