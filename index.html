@@ -189,11 +189,13 @@
     }
     .newsBigbox{
         width: 1200px;
+        height: 520px;
         overflow: hidden;
     }
     .newsBox{
         white-space: nowrap;
         width: 200000px;
+        padding: 18px 0 ;
         overflow: hidden;
     }
     .newsBox>li{
@@ -211,6 +213,15 @@
         display: block;
         width: 100%;
         height: 100%;
+        -webkit-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s;
+    }
+    .newsBox>li>a:hover{
+        position: relative;
+        top:-18px;
+        -webkit-box-shadow: 5px 5px 5px  #bdbdbd;
+        box-shadow: 5px 5px 5px  #bdbdbd;
     }
     .newsBottom{
         height: 260px;
@@ -727,7 +738,14 @@
             }
             $('.newsBox').animate({marginLeft:-newsIndex*412+'px'})
         }
-
+        $(window).on('focus',function () {
+            t = setInterval(lunbo,5000)
+            starsT = setInterval(starslunbo,5000)
+        })
+        $(window).on('blur',function () {
+            clearInterval(t);
+            clearInterval(starsT)
+        })
     })
 </script>
 </html>
