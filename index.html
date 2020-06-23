@@ -58,9 +58,9 @@
         border-radius: 5px;
         background: rgba(255,255,255,0.4);
         cursor: pointer;
-        -webkit-transition: 0.3s;
-        -o-transition: 0.3s;
-        transition: 0.3s;
+        /*-webkit-transition: 0.3s;*/
+        /*-o-transition: 0.3s;*/
+        /*transition: 0.3s;*/
     }
     .lunbolist .active{
         width: 30px;
@@ -596,29 +596,36 @@
 <script>
     $(function () {
         // 轮播图
-        var index = 1
+        var index = 1;
+        var flag = true;
         $('.lunboBox>li').eq(0).addClass('show')
         $('.lunbolist>li').eq(0).addClass('active')
         function lunbo() {
-            $('.lunboBox>li').hide().eq(index).show();
-            $('.lunbolist>li').removeClass('active').eq(index).addClass('active')
-            index++;
-            if(index>4){
-                index=0;
-            }
+                $('.lunboBox>li').hide().eq(index).show();
+                $('.lunbolist>li').removeClass('active').eq(index).addClass('active')
+                index++;
+                if(index>4){
+                    index=0;
+                }
         }
         var t = setInterval(lunbo,3000)
         $('.lunbolist>li').on('mouseover',function () {
             index=$(this).index();
             lunbo()
             clearInterval(t)
+            t=null
         }).on('mouseout',function () {
-            t = setInterval(lunbo,5000)
+            if(t==null){
+                t = setInterval(lunbo,5000)
+            }
         })
         $('.lunbo').on('mouseover',function () {
             clearInterval(t)
+            t=null
         }).on('mouseout',function () {
-            t = setInterval(lunbo,5000)
+            if(t==null){
+                t = setInterval(lunbo,5000)
+            }
         })
         //轮播图数据请求
         $.ajax({
@@ -653,13 +660,19 @@
             starsIndex=$(this).index();
             starslunbo()
             clearInterval(starsT)
+            starsT=null
         }).on('mouseout',function () {
-            starsT= setInterval(starslunbo,5000)
+            if(starsT==null){
+                starsT= setInterval(starslunbo,5000)
+            }
         })
         $('.starsBox').on('mouseover',function () {
             clearInterval(starsT)
+            starsT=null
         }).on('mouseout',function () {
-            starsT = setInterval(starslunbo,5000)
+            if(starsT==null){
+                starsT = setInterval(starslunbo,5000)
+            }
         })
         //就业明星数据请求
         $.ajax({
@@ -741,10 +754,14 @@
         $(window).on('focus',function () {
             t = setInterval(lunbo,5000)
             starsT = setInterval(starslunbo,5000)
+            t=null;
+            starsT=null
         })
         $(window).on('blur',function () {
-            clearInterval(t);
-            clearInterval(starsT)
+            if(t==null&&starsT==null){
+                clearInterval(t);
+                clearInterval(starsT)
+            }
         })
     })
 </script>

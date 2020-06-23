@@ -2,12 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>顶脉</title>
+    <link rel="stylesheet" href="css/public.css">
 </head>
+<style>
+    .inner{
+        width: 1120px;
+        margin: 0 auto;
+    }
+    .title{
+        padding-top: 4px;
+        line-height: 80px;
+        font-size: 30px;
+        font-weight: 600;
+        color: #333;
+        text-align: center;
+    }
+    .content *{
+        font-size: 16px;
+        color: #666;
+    }
+</style>
 <body>
 <div class="head"></div>
+<div class="inner">
+    <div class="title"></div>
+    <div class="content"></div>
+</div>
 <div class="foot"></div>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/public.js"></script>
+<script>
+    $(function () {
+        var id=window.location.search.match(/id=\d+/)&&window.location.search.match(/id=\d+/)[0].replace(/\D/g,"")||''
+        $.ajax({
+            type: "get",
+            url: port+"/api.php?act=article_info&article_id="+id,
+            dataType:'json',
+            success: function(res) {
+                var data=res.data;
+                $('.title').html(data.title)
+                $('.content').html(data.content)
+            },
+            error : function(e){
+            }
+        });
+    })
+
+</script>
 </html>

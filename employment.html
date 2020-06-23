@@ -2,12 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my-page.css">
     <title>顶脉</title>
 </head>
+<style>
+    .part1{
+        width: 100%;
+        height: 400px;
+        background: #3391F3;
+        position: relative;
+    }
+    .part1>img{
+        position: absolute;
+        width: 1200px;
+        left: 50%;
+        margin-left: -600px;
+        top:60px;
+        -webkit-box-shadow:0 0 20px #3391F3;
+        box-shadow:0 0 20px #3391F3;
+    }
+    .part2{
+        padding-top: 80px;
+        background: #F8F8F8;
+    }
+    .partbox{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .list{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .list>li{
+        margin-bottom:40px;
+        width: 580px;
+        height: 220px;
+        background:#fff;
+    }
+    .list>li:hover{
+        -webkit-box-shadow: 0px 0px 20px #D3D3D3;
+        box-shadow: 0px 0px 20px #D3D3D3;
+    }
+    .img{
+        width: 240px;
+        height: 220px;
+        background:#8D8D8D;
+        float: left;
+        background-position:center center;
+    }
+    .rights{
+        padding: 20px;
+        float: right;
+        width: 340px;
+    }
+    .rights>.title{
+        font-size: 14px;
+        font-weight: bolder;
+        letter-spacing: 0;
+        color:#222;
+        white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+    }
+    .rights>p{
+        font-size: 12px;
+        color:#999;
+        height: 130px;
+        word-break: keep-all;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+    .rights>span{
+        display: block;
+        font-size: 12px;
+        color:#999;
+    }
+    .rights>span>a{
+        color:#3391F3;
+        float:right;
+        font-size: 12px;
+    }
+    .tabPage{
+        width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 20px;
+        overflow: hidden;
+    }
+</style>
 <body>
 <div class="head"></div>
+<div class="part1">
+    <img src="images/employment/banner.png" alt="">
+</div>
+<div class="part2">
+    <img src="images/employment/icon_jiuyezixun.png" alt="" class="partimage" style="margin-bottom: 50px">
+    <ul class="partbox list">
+    </ul>
+    <div class="tabPage">
+        <div class="my-page"></div>
+    </div>
+</div>
 <div class="foot"></div>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/public.js"></script>
+<script src="js/my-page.js"></script>
+<script>
+    var data = [];
+    var cate_id = 1; //分类id
+    var currentPage = 1;//当前页码;
+    var count = 1;//总条数
+    var pages=1;
+    var pageSize=10
+    function getData(bool) {
+        $.ajax({
+            type: "post",
+            url: port+"/api.php?act=article_list&cate_id=1",
+            data: {
+                page: currentPage,
+                page_size:pageSize
+            },
+            dataType:'json',
+            success: function(res) {
+                var data=res.data;
+                var list=data.list;
+                $('.list').html('')
+                var ul=$('.list')
+                if(list.length>0){
+                    list.forEach(item=>{
+                        var li=$('<li>')
+                        var img=$('<div></div>').css("backgroundImage","url("+item.pic+")").addClass('img')
+                        var right=$('<div class="rights"></div>')
+                        var title=$('<div class="title"></div>').html(item.title)
+                        var miaoshu=$('<p></p>').html(item.description)
+                        var date=$('<span></span>').html(item.date)
+                        var a=$('<a></a>').attr({href:'detail.html?id='+item.id}).html('查看详情>')
+                        date.append(a)
+                        li.append(img)
+                        right.append(title).append(miaoshu).append(date).appendTo(li)
+                        li.appendTo(ul)
+                    })
+                    pages=Math.ceil(data.record_count/pageSize)
+                    if(bool){
+                        init()
+                    }
+                }
+            }
+        });
+    }
+    getData(true)
+    function init(){
+        myPageInit({
+            pages: pages,
+            currentPage: 1,
+            element: '.my-page',
+            callback: function(page) {
+                currentPage = page;
+                getData()
+            }
+        });
+    }
+</script>
 </html>

@@ -1,0 +1,77 @@
+.my-page {
+  font-size: 14px;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  color: #333333;
+  display: inline-block;
+  float: right;
+}
+
+.my-page .my-page-prev,
+.my-page .my-page-next {
+  float: left;
+  width:170px;
+  height: 60px;
+  border-radius: 30px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  background: #3391F3;
+  color: #fff;
+}
+
+.my-page .my-page-prev.my-page-forbid,
+.my-page .my-page-next.my-page-forbid {
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.my-page .my-page-prev:not(.my-page-forbid):hover,
+.my-page .my-page-next:not(.my-page-forbid):hover {
+}
+
+.my-page .my-page-group {
+  float: left;
+  padding: 0;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.my-page .my-page-group li {
+  float: left;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 40px;
+  padding: 0 8px;
+  height:60px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.my-page .my-page-group .my-page-cell {
+  font-size: 15px;
+  line-height: 60px;
+  letter-spacing: 0;
+}
+
+.my-page .my-page-group .my-page-cell:hover,
+.my-page .my-page-group .my-page-checked {
+  color: #3391F3;
+  font-weight: bolder;
+  font-size: 18px;
+  position: relative;
+  top:-1px;
+}
+
+.my-page .my-page-group .my-page-omit {
+  pointer-events: none;
+  line-height: 60px;
+
+}
+/*# sourceMappingURL=my-page.css.map */
