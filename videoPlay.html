@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>顶脉科技</title>
+    <meta name="keywords" content="顶脉科技、IT培训">
+    <meta name="description" content="一家专门为IT类培训机构、在线教育机构和高职高专、本科院校提供实习实训和就业外包服务的公司，经过五年的发展，顶脉就业外包业务已经覆盖IT互联网、电商、游戏动漫、物联网、人工智能大数据、通讯技术等六大专业类">
+    <link rel="stylesheet" href="css/public.css">
+
+</head>
+<style>
+	* {
+
+	}
+	.page {
+		width: 100%;
+		height: 100%;
+		background-color: #1B1F22;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+
+	}
+	.inner {
+		margin: 80px auto;
+		width: 1200px;
+		height: 590px;
+	}
+	.inner video{
+		width: 900px;
+		height:590px;
+		float: left;
+		background: #000000;
+	}
+	.inner .right {
+		width: 280px;
+		padding: 20px;
+		height: 590px;
+		float: right;
+		background: #333;
+	}
+	.inner .right p{
+		color: #fff;
+	}
+	.inner .right .title {
+		margin-bottom: 10px;
+	}
+
+</style>
+<body>
+	<div class="head"></div>
+	<div class="page">
+		<div class="inner">
+			<video controls="controls" src="" class="videos" poster=""
+			></video>
+			<div class="right">
+				<p class="title">脚孤拐</p>
+				<div class="detail">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="foot"></div>
+</body>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/public.js"></script>
+<script>
+	$(function () {
+        if(!window.sessionStorage.token){
+            window.location.href="login.html"
+			return ;
+        }
+        var test =window.location.href;
+        var id = test.split("?id=")[1];
+        console.log(port+"/api.php?act=video_info")
+        getVideo();
+        function getVideo() {
+            $.ajax({
+                type: "post",
+                dataType: 'json',
+                url: port+"/api.php?act=video_info",
+                data: {
+                    video_id: id
+                },
+                success: function(result) {
+                    $('.videos').attr('src', result.data.file);
+                    $('.videos').attr('poster', result.data.pic);
+                    $('.title').html(result.data.name);
+                    $('.detail').html(result.data.content);
+                }
+            });
+        }
+    })
+</script>
+</html>

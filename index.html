@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/public.css">
-    <title>顶脉</title>
+    <title>顶脉科技</title>
+    <meta name="keywords" content="顶脉科技、IT培训">
+    <meta name="description" content="一家专门为IT类培训机构、在线教育机构和高职高专、本科院校提供实习实训和就业外包服务的公司，经过五年的发展，顶脉就业外包业务已经覆盖IT互联网、电商、游戏动漫、物联网、人工智能大数据、通讯技术等六大专业类">
 </head>
 <style>
     .lunbo{
@@ -243,6 +245,8 @@
         font-size: 12px;
         color:#555;
         line-height: 30px;
+        height: 138px;
+        overflow: hidden;
     }
     .icon_left{
         position: absolute;
@@ -608,7 +612,7 @@
                     index=0;
                 }
         }
-        var t = setInterval(lunbo,3000)
+        var t = setInterval(lunbo,5000)
         $('.lunbolist>li').on('mouseover',function () {
             index=$(this).index();
             lunbo()
@@ -752,16 +756,17 @@
             $('.newsBox').animate({marginLeft:-newsIndex*412+'px'})
         }
         $(window).on('focus',function () {
-            t = setInterval(lunbo,5000)
-            starsT = setInterval(starslunbo,5000)
-            t=null;
-            starsT=null
+            if(t==null){
+                t = setInterval(lunbo,5000)
+                starsT = setInterval(starslunbo,5000)
+            }
+
         })
         $(window).on('blur',function () {
-            if(t==null&&starsT==null){
                 clearInterval(t);
                 clearInterval(starsT)
-            }
+                t=null;
+                starsT=null;
         })
     })
 </script>

@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/public.css">
+    <title>顶脉科技</title>
+    <meta name="keywords" content="顶脉科技、IT培训">
+    <meta name="description" content="一家专门为IT类培训机构、在线教育机构和高职高专、本科院校提供实习实训和就业外包服务的公司，经过五年的发展，顶脉就业外包业务已经覆盖IT互联网、电商、游戏动漫、物联网、人工智能大数据、通讯技术等六大专业类">
+</head>
+<style>
+    .login{
+        background:url("images/login/bg_zhuce.png") center center;
+        overflow: hidden;
+    }
+    .neirong{
+        width: 1120px;
+        margin: 200px auto;
+        position: relative;
+    }
+    .cleft{
+        float: left;
+        width: 480px;
+        margin-top: 120px;
+    }
+    .cleft p{
+        font-size: 35px;
+        font-weight: bolder;
+        line-height: 70px;
+        color:#fff;
+    }
+    .cleft span{
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+        color:#fff;
+        line-height: 30px;
+    }
+    .cright{
+        width: 500px;
+        height: 444px;
+        background: #fff;
+        float: right;
+        padding: 0 60px;
+        border-radius: 15px;
+    }
+    .title{
+        font-size: 24px;
+        font-weight: bolder;
+        text-align: center;
+        line-height: 104px;
+    }
+    .inputs{
+
+    }
+    .inputs>span{
+        font-size: 16px;
+        color:#676767;
+        line-height: 32px;
+    }
+    .inputBox{
+        position: relative;
+    }
+    .inputBox>img{
+        position: absolute;
+        top:8px;
+        left: 10px;
+    }
+    .inputBox input{
+        width: 100%;
+        height: 40px;
+        border:1px solid #EEEEEE;
+        margin-bottom: 14px;
+        outline: none;
+        text-indent: 40px;
+        font-size: 16px;
+    }
+    .spans{
+        overflow: hidden;
+    }
+    .spans>span{
+        float: right;
+        font-size: 16px;
+        color:#676767;
+        line-height: 32px;
+    }
+    .spans>span>a{
+        color:#3391F3;
+        cursor: pointer;
+    }
+    .spans>a{
+        overflow: hidden;
+        font-size: 13px;
+        color:#3391F3;
+        line-height: 32px;
+        cursor: pointer;
+    }
+    .warning{
+        color:red;
+        line-height: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 14px;
+    }
+    .submit{
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        color:#fff;
+        text-align: center;
+        line-height: 50px;
+        font-size: 16px;
+        background:#3391F3;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    .send{
+        float: right;
+        width: 172px;
+        height: 40px;
+        border: 1px solid #3391F3;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .times{
+        float: right;
+        color:red;
+        text-align: center;
+        line-height: 40px;
+        width: 172px;
+        height: 40px;
+        display: none;
+        border-radius: 20px;
+        background: #e2e6ea;
+    }
+    .cright1{
+    }
+    .cright2{
+        display: none;
+    }
+    .cright3{
+        height: 530px;
+        display: none;
+    }
+    .close{
+        position: absolute;
+        right: -40px;
+        top:0px;
+        z-index: 99;
+        width: 22px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="login">
+        <div class="neirong">
+            <div class="cleft">
+                <p>一家专门做<br>技术类人才就业外包的公司</p>
+                <span>A COMPANY SPECIALIZED IN OUTSOURCING <br> THE EMPLOYMENT OF TECHNICA</span>
+            </div>
+            <img src="images/login/close.png" alt="" class="close">
+            <div class="cright cright1">
+                <div class="title">
+                    登&nbsp;录
+                </div>
+                <div class="inputs">
+                    <span>手机号码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon_shouji.png" alt="">
+                        <input type="text" id="phoneDenglu1">
+                    </div>
+                </div>
+                <div class="inputs">
+                    <span>密码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon_mima.png" alt="">
+                        <input type="password" id="denglu1Pw">
+                    </div>
+                </div>
+                <div class="spans">
+                    <a class="tab2">动态密码登录</a>
+                    <span>还没有账号？<a class="tab3">去注册</a></span>
+                </div>
+                <div class="warning warningDenglu1"></div>
+                <div class="submit denglu1">登 录</div>
+            </div>
+            <div class="cright cright2">
+                <div class="title">
+                    登&nbsp;录
+                </div>
+                <div class="inputs">
+                    <span>手机号码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon_shouji.png" alt="">
+                        <input type="text" id="phoneDenglu2">
+                    </div>
+                </div>
+                <div class="inputs">
+                    <span>验证码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon-yanzhengma.png" alt="">
+                        <input type="text" class="dengluCode" id="denglu1Pw2" style="width: 50%">
+                        <div class="send sendCodeDenglu">发送验证码</div>
+                        <div class="times timesDengu">60s</div>
+                    </div>
+                </div>
+                <div class="spans">
+                    <a class="tab1">账号密码登录</a>
+                    <span>还没有账号？<a class="tab3">去注册</a></span>
+                </div>
+                <div class="warning warningDenglu2"></div>
+                <div class="submit denglu2">登 录</div>
+            </div>
+            <div class="cright cright3">
+                <div class="title">
+                    注&nbsp;册
+                </div>
+                <div class="inputs">
+                    <span>手机号码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon_shouji.png" alt="">
+                        <input type="text" id="phoneZhuce">
+                    </div>
+                </div>
+                <div class="inputs">
+                    <span>验证码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon-yanzhengma.png" alt="">
+                        <input type="text" class="zhuceCode" style="width: 50%">
+                        <div class="send sendCodeZhuce">发送验证码</div>
+                        <div class="times timesZhuce">60s</div>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <span>密码</span>
+                    <div class="inputBox">
+                        <img src="images/login/icon_mima.png" alt="">
+                        <input type="password" class="zhucePW" >
+                    </div>
+                </div>
+                <div class="spans">
+                    <a class="tab1">账号密码登录</a>
+                    <span>已有账号？<a class="tab1">去登录</a></span>
+                </div>
+                <div class="warning warningZhuce"></div>
+                <div class="submit zhuceSubmit">注 册</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/public.js"></script>
+<script>
+    $(function () {
+        var width=$(window).width();
+        var height=$(window).height();
+        $('.login').css({width:width,height:height})
+        //登录注册切换
+        $('.tab1').click(function () {
+            $('.cright').hide();
+            $('.cright1').show();
+        })
+        $('.tab2').click(function () {
+            $('.cright').hide();
+            $('.cright2').show();
+        })
+        $('.tab3').click(function () {
+            $('.cright').hide();
+            $('.cright3').show();
+        })
+        //手机号密码登录
+        $('.denglu1').click(function () {
+            $('.warningDenglu1').html(' ');
+            var phone=$('#phoneDenglu1').val();
+            var pw=$('#denglu1Pw').val()
+            var  reg = /(^1[123456789]\d{9}$)|(^\d{8}$)/;
+            var  reg2 = /[a-zA-z0-9!@#$%^&*.?]{6,20}/;
+            if(!reg.test(phone)){
+                $('.warningDenglu1').html('请输入正确手机号');
+                return;
+            }
+            if(!pw){
+                $('.warningDenglu1').html('请输入密码');
+                return;
+            }
+            if(!reg2.test(pw)){
+                $('.warningDenglu1').html('密码格式不正确');
+                return;
+            }
+            $.ajax({
+                type : "POST",
+                url : port+"/api.php?act=login",
+                dataType : "json",
+                data : {
+                    phone:phone,
+                    password:pw,
+                    type:1
+                },
+                success:function(data) {
+                    if(data.error=='1') {
+                        window.sessionStorage.setItem('token',true)
+                        window.sessionStorage.setItem('user',data.data)
+                        window.location.href='classroom.html'
+                    }else{
+                        $('.warningDenglu1').html(data.data);
+                    }
+                },
+            });
+        })
+        //登录发送验证码
+        $('.sendCodeDenglu').click(function () {
+            $('.warningDenglu2').html(' ');
+            var phone=$('#phoneDenglu2').val();
+            var  reg = /(^1[123456789]\d{9}$)|(^\d{8}$)/;
+            if(!reg.test(phone)){
+                $('.warningDenglu2').html('请输入正确手机号');
+                return;
+            }
+            $('.sendCodeDenglu').hide();
+            $('.timesDengu').show();
+            var number=60;
+            var t=setInterval(function () {
+                number--;
+                if(number<0){
+                    clearInterval(t);
+                    $('.timesDengu').hide();
+                    $('.sendCodeDenglu').show();
+                    number=60
+                }
+                $('.timesDengu').html(number+'s');
+            },1000);
+            $.ajax({
+                type : "POST",
+                url : "http://39.98.37.134:8014/api.php?act=send_sms",
+                dataType : "json",
+                data : {
+                    phone:phone
+                },
+                success:function(data) {
+                    if(data.error==1) {
+
+                    }else{
+                        $('#waring').html(data.msg);
+                    }
+                },
+            });
+        })
+        //动态密码登录
+        $('.denglu2').click(function () {
+            $('.warningDenglu2').html(' ');
+            var phone=$('#phoneDenglu2').val();
+            var pw=$('.dengluCode').val()
+            var  reg = /(^1[123456789]\d{9}$)|(^\d{8}$)/;
+            if(!reg.test(phone)){
+                $('.warningDenglu2').html('请输入正确手机号');
+                return;
+            }
+            if(!pw){
+                $('.warningDenglu2').html('请输入验证码');
+                return;
+            }
+            $.ajax({
+                type : "POST",
+                url : port+"/api.php?act=login",
+                dataType : "json",
+                data : {
+                    phone:phone,
+                    password:pw,
+                    type:2
+                },
+                success:function(data) {
+                    if(data.error=='1') {
+                        window.sessionStorage.setItem('token',true)
+                        window.sessionStorage.setItem('user',data.data)
+                        window.location.href='classroom.html'
+                    }else{
+                        $('.warningDenglu2').html(data.data);
+                    }
+                },
+            });
+        })
+        //注册发送验证码
+        $('.sendCodeZhuce').click(function () {
+            $('.warningZhuce').html(' ');
+            var phone=$('#phoneZhuce').val();
+            var  reg = /(^1[123456789]\d{9}$)|(^\d{8}$)/;
+            if(!reg.test(phone)){
+                $('.warningZhuce').html('请输入正确手机号');
+                return;
+            }
+            $('.sendCodeZhuce').hide();
+            $('.timesZhuce').show();
+            var number=60;
+            var t=setInterval(function () {
+                number--;
+                if(number<0){
+                    clearInterval(t);
+                    $('.timesZhuce').hide();
+                    $('.sendCodeZhuce').show();
+                    number=60
+                }
+                $('.timesZhuce').html(number+'s');
+            },1000);
+            $.ajax({
+                type : "POST",
+                url : port+"/api.php?act=send_sms",
+                dataType : "json",
+                data : {
+                    phone:phone
+                },
+                success:function(data) {
+                    if(data.code=='2000') {
+                    }else{
+                        $('.warningZhuce').html(data.msg);
+                    }
+                },
+            });
+        })
+        //注册
+        $('.zhuceSubmit').click(function () {
+            $('.waringZhuce').html(' ');
+            var phone=$('#phoneZhuce').val();
+            var code=$('.zhuceCode').val()
+            var pw=$('.zhucePW').val()
+            var  reg = /(^1[123456789]\d{9}$)|(^\d{8}$)/;
+            var  reg2 = /[a-zA-z0-9!@#$%^&*.?]{6,20}/;
+            if(!reg.test(phone)){
+                $('.warningZhuce').html('请输入正确手机号');
+                return;
+            }
+            if(!code){
+                $('.warningZhuce').html('请输入验证码');
+                return;
+            }
+            if(!pw){
+                $('.warningZhuce').html('请输入密码');
+                return;
+            }
+            if(!reg2.test(pw)){
+                $('.warningZhuce').html('密码格式不正确');
+                return;
+            }
+            $.ajax({
+                type : "POST",
+                url : port+"/api.php?act=register",
+                dataType : "json",
+                data : {
+                    phone:phone,
+                    code:code,
+                    password:pw
+                },
+                success:function(data) {
+                    if(data.error=='1') {
+                        window.sessionStorage.setItem('token',true)
+                        window.sessionStorage.setItem('user',data.data)
+                        window.location.href='classroom.html'
+                    }else{
+                        $('.warningZhuce').html(data.data);
+                    }
+                },
+            });
+        })
+        $('.close').click(function () {
+            window.location.href='index.html'
+        })
+    })
+</script>
+</html>

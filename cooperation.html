@@ -2,12 +2,376 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>顶脉</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/my-page.css">
+    <title>顶脉科技</title>
+    <meta name="keywords" content="顶脉科技、IT培训">
+    <meta name="description" content="一家专门为IT类培训机构、在线教育机构和高职高专、本科院校提供实习实训和就业外包服务的公司，经过五年的发展，顶脉就业外包业务已经覆盖IT互联网、电商、游戏动漫、物联网、人工智能大数据、通讯技术等六大专业类">
 </head>
+<style>
+    /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+    .part1{
+        height: 400px;
+        width: 100%;
+        background: url("images/index/banner.png") center center;
+    }
+    .part2{
+
+    }
+    .part2box{
+        width: 1200px;
+        margin: 0 auto;
+        height: 600px;
+        position: relative;
+    }
+    .part2box>li{
+        width: 270px;
+        height: 140px;
+        border-radius: 5px;
+    }
+    .part3{
+        background: #F8F8F8;
+        overflow: hidden;
+    }
+    .part3box{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .part3box>li{
+        width: 100%;
+        height:250px;
+        margin-bottom:38px;
+    }
+    .title{
+        font-size: 20px;
+        font-weight: bolder;
+        letter-spacing: 0;
+        color:#222;
+        line-height: 36px;
+    }
+    .cleft{
+        width: 250px;
+        height: 250px;
+        float: left;
+        background-color:#8D8D8D;
+    }
+    .cright{
+        width: 950px;
+        height: 250px;
+        float: right;
+        background:#fff;
+        padding:10px 30px ;
+    }
+    .cright>p{
+        font-size: 12px;
+        color:#999;
+        letter-spacing: 0;
+        width: 510px;
+        line-height: 36px;
+        height: 120px;
+        overflow: hidden;
+    }
+    .cright>span{
+        display: block;
+        font-size: 12px;
+        color:#999;
+        line-height: 50px;
+    }
+    .cright>span>a{
+        display: block;
+        float: right;
+        width: 180px;
+        height: 50px;
+        border-radius: 25px;
+        background:#3391F1;
+        text-align: center;
+        color:#fff;
+        font-size: 16px;
+        letter-spacing: 3px;
+        line-height: 50px;
+    }
+    .part3box>li:hover{
+        -webkit-box-shadow: 0 0 20px #E1E1E1;
+        box-shadow: 0 0 20px #E1E1E1;
+    }
+    .tabPage{
+        width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 20px;
+        overflow: hidden;
+    }
+    .hezuolist{
+        position: relative;
+        width: 100%;
+        height: 480px;
+        display: none;
+    }
+    .hezuolist>li{
+        position: absolute;
+        width: 100% ;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .hezuolist>li>div{
+        width:270px;
+        height:140px;
+        border:1px solid #CECECE;
+        border-radius: 5px;
+        background-position: center center;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .1s;
+        -o-transition: .1s;
+        transition: .1s;
+    }
+    .hezuolist>li>div:hover{
+        -webkit-filter: none;
+        filter: none;
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        border: none;
+        -webkit-box-shadow: 0 0 20px #D6DEE8;
+        box-shadow: 0 0 20px #D6DEE8;
+    }
+    .starslist{
+        width: 90px;
+        height: 6px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background: #E4ECF7;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        position: absolute;
+        bottom:50px;
+        left:50%;
+        margin-left:-45px;
+        z-index: 9;
+        border-radius: 3px;
+    }
+    .starslist>li{
+        width: 30px;
+        height: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .starsActive{
+        background: #3391F3;
+    }
+</style>
 <body>
 <div class="head"></div>
+<div class="part1">
+</div>
+<div class="part2">
+    <img src="images/cooperation/icon_changqihezuo.png" alt="" class="partimage">
+    <div class="part2box">
+        <ul class="hezuolist">
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+        </ul>
+        <ul class="hezuolist">
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+        </ul>
+        <ul class="hezuolist">
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+        </ul>
+        <ul class="starslist">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<div class="part3">
+    <img src="images/cooperation/icon_jiuyehezuoxinwen.png" alt="" class="partimage">
+    <ul class="part3box list">
+        <li>
+            <div class="cleft">
+            </div>
+            <div class="cright">
+                <div class="title">这是标题</div>
+                <p>
+                    怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么
+                    怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么
+                    怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么
+                    怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么怎么
+                </p>
+                <span class="date">
+                    本地时间
+                    <a href="">查看详情</a>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <div class="tabPage">
+        <div class="my-page"></div>
+    </div>
+</div>
 <div class="foot"></div>
 </body>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/public.js"></script>
+<script src="js/my-page.js"></script>
+<script>
+    var data = [];
+    var cate_id = 1; //分类id
+    var currentPage = 1;//当前页码;
+    var count = 1;//总条数
+    var pages=1;
+    var pageSize=3
+    function getData(bool) {
+        $.ajax({
+            type: "post",
+            url: port+"/api.php?act=article_list&cate_id=6",
+            data: {
+                page: currentPage,
+                page_size:pageSize
+            },
+            dataType:'json',
+            success: function(res) {
+                var data=res.data;
+                var list=data.list;
+                $('.list').html('')
+                var ul=$('.list')
+                if(list.length>0){
+                    list.forEach(item=>{
+                        var li=$('<li>')
+                        var img=$('<div></div>').css("backgroundImage","url("+item.pic+")").addClass('cleft')
+                        var right=$('<div class="cright"></div>')
+                        var title=$('<div class="title"></div>').html(item.title)
+                        var miaoshu=$('<p></p>').html(item.description)
+                        var date=$('<span></span>').html(item.date)
+                        var a=$('<a></a>').attr({href:'detail.html?id='+item.id}).html('查看详情>')
+                        date.append(a)
+                        li.append(img)
+                        right.append(title).append(miaoshu).append(date).appendTo(li)
+                        li.appendTo(ul)
+                    })
+                    pages=Math.ceil(data.record_count/pageSize)
+                    if(bool){
+                        init()
+                    }
+                }
+            }
+        });
+    }
+    getData(true)
+    function init(){
+        myPageInit({
+            pages: pages,
+            currentPage: 1,
+            element: '.my-page',
+            callback: function(page) {
+                currentPage = page;
+                getData()
+            }
+        });
+    }
+    //合作企业数据请求
+    $.ajax({
+        type: "post",
+        dataType: 'json',
+        url: port+"/api.php?act=article_list&cate_id=5",
+        data:{
+            page_size:10000
+        },
+        success: function(res) {
+            if (res.error == 1) {
+                if(res.data.list.length>0){
+                    var data=res.data.list.slice(0,36),
+                        length=res.data.list.length;
+                   data.forEach((item,index)=>{
+                       $('.hezuolist>li>div').eq(index).css({backgroundImage:'url('+item.pic+')'})
+                   })
+                }
+            }
+        }})
+    //合作企业轮播图
+    var starsIndex = 1
+    $('.hezuolist').eq(0).show()
+    $('.starslist>li').eq(0).addClass('starsActive')
+    function starslunbo() {
+        $('.hezuolist').hide().eq(starsIndex).show();
+        $('.starslist>li').removeClass('starsActive').eq(starsIndex).addClass('starsActive')
+        starsIndex++;
+        if(starsIndex>2){
+            starsIndex=0;
+        }
+    }
+    var starsT = setInterval(starslunbo,5000)
+    $('.starslist>li').on('mouseover',function () {
+        starsIndex=$(this).index();
+        starslunbo()
+        clearInterval(starsT)
+        starsT=null
+    }).on('mouseout',function () {
+        if(starsT==null){
+            starsT= setInterval(starslunbo,5000)
+        }
+    })
+    $('.part2box').on('mouseover',function () {
+        clearInterval(starsT)
+        starsT=null
+    }).on('mouseout',function () {
+        if(starsT==null){
+            starsT = setInterval(starslunbo,5000)
+        }
+    })
+</script>
 </html>
